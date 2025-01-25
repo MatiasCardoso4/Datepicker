@@ -20,7 +20,6 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
-
 }
 
 .datepicker-container>.input-container {
@@ -30,6 +29,7 @@ main {
   border: 2px solid #000;
   padding-right: 12px;
   width: 100%;
+  max-width: 100%;
 }
 
 
@@ -55,6 +55,7 @@ main {
 
 .datepicker-container>.datepicker {
   width: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -80,7 +81,7 @@ main {
 
 }
 
-.datepicker-container>.datepicker>.datepicker-header>.month-year-container>.prev-month img , 
+.datepicker-container>.datepicker>.datepicker-header>.month-year-container>.prev-month img,
 .datepicker-container>.datepicker>.datepicker-header>.month-year-container>.next-month img {
   width: 16px;
 }
@@ -94,6 +95,7 @@ main {
 
 .datepicker-body {
   width: 100%;
+  max-width: 100%;
   position: absolute;
   top: 100%;
 }
@@ -114,18 +116,25 @@ main {
   justify-content: center;
   cursor: pointer;
   width: 100%;
+  max-width: 100%;
   padding: 8px;
 }
 
-.datepicker-body>.days>li:nth-child(odd),.datepicker-body>.days>li:nth-child(even)  {
+.datepicker-body>.days>li:nth-child(odd),
+.datepicker-body>.days>li:nth-child(even) {
   border-right: 1px solid #000;
   border-bottom: 1px solid #000;
 }
 
-.datepicker-body>.days>li:nth-child(7n)  {
-  border-right: none;
+.datepicker-body>.days>.empty-square:nth-child(-n+4) {
+  height: 36px;
 }
 
-.datepicker-body>.days>li:nth-last-child(-n+3)  {
+.datepicker-body>.days>.day:nth-child(7n) {
+  border-right: none;
+
+}
+
+.datepicker-body>.days>.day:nth-last-child(-n+7) {
   border-bottom: none;
 }

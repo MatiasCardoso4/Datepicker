@@ -16,13 +16,14 @@ main {
   min-height: 100vh;
 }
 
-.datepicker-container{
+.datepicker-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+
 }
 
-.datepicker-container > .input-container {
+.datepicker-container>.input-container {
   display: flex;
   align-items: center;
   margin-bottom: 2px;
@@ -32,7 +33,7 @@ main {
 }
 
 
-.datepicker-container > .input-container > input[type='text']{
+.datepicker-container>.input-container>input[type='text'] {
   height: 35px;
   padding-left: 10px;
   font-weight: bold;
@@ -40,47 +41,91 @@ main {
   border-right: 2px solid #000;
 }
 
-.datepicker-container > .input-container > .datepicker-icon{
-  background-color: transparent;
+.datepicker-container>.input-container>.datepicker-icon {
   border: none;
   cursor: pointer;
   padding-left: 12px;
 }
 
 
-.datepicker-container > .input-container > .datepicker-icon img{
+.datepicker-container>.input-container>.datepicker-icon img {
   width: 20px;
   height: 20px;
 }
 
-.datepicker-container > .datepicker {
+.datepicker-container>.datepicker {
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  position: relative;
 }
 
-.datepicker-container > .datepicker > .datepicker-header {
+.datepicker-container>.datepicker>.datepicker-header {
   border: 2px solid #000;
   padding: 8px;
   font-weight: bold;
 }
 
-.datepicker-container > .datepicker > .datepicker-header > .month-year-container{
+.datepicker-container>.datepicker>.datepicker-header>.month-year-container {
   display: flex;
   justify-content: space-around;
 }
 
-.datepicker-container > .datepicker > .datepicker-header >.month-year-container > .prev-month, .next-month {
+.datepicker-container>.datepicker>.datepicker-header>.month-year-container>.prev-month,
+.next-month {
   cursor: pointer;
   border: none;
   background-color: inherit;
   font-weight: bold;
+
 }
 
-.datepicker-container > .datepicker > .datepicker-header>   .weekdays {
+.datepicker-container>.datepicker>.datepicker-header>.month-year-container>.prev-month img , 
+.datepicker-container>.datepicker>.datepicker-header>.month-year-container>.next-month img {
+  width: 16px;
+}
+
+.datepicker-container>.datepicker>.datepicker-header>.weekdays {
   display: flex;
   justify-content: space-around;
   list-style: none;
   margin-top: 8px;
+}
+
+.datepicker-body {
+  width: 100%;
+  position: absolute;
+  top: 100%;
+}
+
+.datepicker-body>.days {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(7, 1fr);
+  list-style: none;
+  border-left: 2px solid #000;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.datepicker-body>.days>li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+  padding: 8px;
+}
+
+.datepicker-body>.days>li:nth-child(odd),.datepicker-body>.days>li:nth-child(even)  {
+  border-right: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.datepicker-body>.days>li:nth-child(7n)  {
+  border-right: none;
+}
+
+.datepicker-body>.days>li:nth-last-child(-n+3)  {
+  border-bottom: none;
 }
